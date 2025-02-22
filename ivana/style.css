@@ -1,0 +1,805 @@
+/* Globalni stilovi */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #222222 !important;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* Forma za pretragu */
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #222;
+    padding: 3px 8px; /* Manje paddinga */
+    border-radius: 30px;
+    border: 2px solid #c9a227;
+    transition: border 0.3s ease;
+    max-width: 250px; /* Ili druga vrijednost po potrebi */
+}
+
+.search-form input {
+    padding: 10px;
+    border: none;
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 250px;
+    color: #c9a227;
+    font-size: 16px;
+}
+
+.search-form input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.search-form input::placeholder {
+    color: #c9a227;
+    opacity: 0.7;
+}
+
+/* Uklanjanje pozadine kod autocomplete-a */
+.search-form input:-webkit-autofill,
+.search-form input:-webkit-autofill:hover, 
+.search-form input:-webkit-autofill:focus, 
+.search-form input:-webkit-autofill:active {
+    background-color: transparent !important;
+    color: #c9a227 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #222 inset !important;
+    box-shadow: 0 0 0px 1000px #222 inset !important;
+}
+
+.search-form button {
+    background-color: #c9a227;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 35px; /* Manje dugme */
+    height: 35px; /* Manje dugme */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Manji font za dugme */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-form button:hover {
+    background-color: #b1911e;
+    transform: scale(1.1);
+}
+
+
+.admin-text {
+    color: #C9A227; /* Zlatna boja za admina */
+    font-weight: bold;
+}
+
+.user-text {
+    color: #ffffff; /* Bijela ili neka druga boja za običnog korisnika */
+}
+
+
+/* Auth links */
+.auth-links a {
+    color: #C9A227; /* Zlatni naglasci */
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-links a:hover {
+    background-color: #C9A227;
+    color: #121212;
+    border: 2px solid #C9A227;
+}
+
+
+/* Glavni sadržaj */
+main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Filtri */
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.filter-button {
+    background-color: white;
+    border: 2px solid #d4af37;
+    padding: 12px 24px;
+    border-radius: 25px;
+    margin: 0 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #d4af37;
+    transition: all 0.3s ease;
+}
+
+.filter-button.active, .filter-button:hover {
+    background-color: #d4af37;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Lista recepata */
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Stil kartice recepta */
+.recipe-card {
+    width: 100%; /* Osigurava da kartica popuni dostupni prostor */
+    max-width: 300px; /* Postavi prema potrebi */
+    border: 2px solid #f0c040;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.recipe-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/* Uklanjanje podcrtavanja s linkova u receptima */
+.recipe-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.recipe-card a:hover {
+    text-decoration: none;
+}
+
+/* Slika recepta - zaobljeni rubovi */
+.recipe-image {
+    width: 100% !important;  /* Slika će zauzeti punu širinu kartice */
+    height: auto !important;  /* Zadržava originalne proporcije */
+    border-radius: 10px;  /* Zaobljeni rubovi */
+    display: block;  /* Uklanja bijele prostore oko slike */
+    object-fit: cover;  /* Sprječava razvlačenje slike */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Blaga sjena */
+}
+
+
+
+
+/* Info sekcija recepta */
+.recipe-info {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Stilizacija naslova recepta s animacijom */
+.recipe-info h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.recipe-info h3:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+/* Popravljeni linkovi u naslovima */
+.recipe-info h3 a {
+    text-decoration: none !important;
+    color: inherit !important;
+    font-weight: bold;
+}
+
+.recipe-info h3 a:visited, 
+.recipe-info h3 a:hover, 
+.recipe-info h3 a:active {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+/* Uklanja podcrtavanje sa svih linkova unutar kartice recepta */
+.recipe-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block; /* Link obuhvaća cijelu karticu */
+}
+
+/* Sprječava podcrtavanje na hover */
+.recipe-link:hover {
+    text-decoration: none !important;
+}
+
+/* Uklanja prazne linkove */
+a:empty {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Opcionalno: Ako želiš podcrtavanje na hover */
+.recipe-info h3 a:hover {
+    text-decoration: underline !important;
+}
+
+/* Gumb za više informacija */
+.recipe-info a {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #d4af37;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.recipe-info a:hover {
+    background: #b7952b;
+    transform: scale(1.1);
+}
+
+
+/* Footer stil */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 3px solid #d4af37;
+}
+
+/* Tekst u footeru */
+.footer-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Modal - pozadina */
+.modal {
+    display: none; /* Modal je inicijalno sakriven */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Blago zatamnjena pozadina */
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px); /* Blur efekt za moderniji izgled */
+}
+
+/* Sadržaj modala */
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+    text-align: center;
+}
+
+/* Dugme za zatvaranje */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff4d4d;
+}
+
+/* Naslov */
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+}
+
+/* Forma */
+.form-section {
+    width: 100%;
+}
+
+.form-section label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.form-section input:focus {
+    border-color: #d4af37; /* Zlatna boja */
+    outline: none;
+}
+
+/* Dugme za prijavu/registraciju */
+.form-section button {
+    background: linear-gradient(135deg, #d4af37, #b28b30); /* Zlatna boja */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+    width: 100%;
+}
+
+.form-section button:hover {
+    background: linear-gradient(135deg, #b28b30, #8c6b25); /* Tamnija zlatna na hover */
+    transform: scale(1.03);
+}
+
+/* Linkovi ispod forme */
+.form-section p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-section a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-section a:hover {
+    color: #8c6b25; /* Tamnija zlatna */
+}
+
+/* Animacija otvaranja modala */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responzivnost */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .form-section button {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-form {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .search-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-form input {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .recipe-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card {
+        max-width: 100%;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+
+    .search-form button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .recipe-info h3 {
+        font-size: 18px;
+    }
+
+    .recipe-info a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form-section button {
+        padding: 10px;
+    }
+}
+
+
+
+
+/*admin aktivnosti*/
+.admin-back {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.admin-back:hover {
+    background-color: #e64a19;
+}
+
+/* Glavni sadržaj za admin */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+/* Globalni stilovi */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Gumb u zaglavlju - stiliziran poput ostalih */
+.header-button {
+    background: linear-gradient(135deg, #d4af37, #b28b30);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.header-button:hover {
+    background: linear-gradient(135deg, #b28b30, #8c6b25);
+    border-color: #d4af37;
+    transform: scale(1.05);
+}
+
+/* uredi recept*/
+/* Zaglavlje */
+header {
+    background: #222222;
+    padding: 15px 0;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h2 {
+    color: #d4af37;
+    font-size: 24px;
+    margin: 0;
+    text-transform: capitalize; /* Pretvara tekst u mala slova */
+}
+
+
+/* Navigacija */
+.header-links a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 20px;
+    background: black;
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.header-links a:hover {
+    background: #d4af37;
+    color: black;
+}
+
+/* Stiliziranje kontejnera tablice */
+.table-container {
+    max-width: 900px;
+    margin: 20px auto;
+    overflow-x: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stiliziranje tablice */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Zaglavlje tablice */
+th {
+    background: black;
+    color: #d4af37;
+    padding: 15px;
+    font-size: 18px;
+}
+
+/* Redovi tablice */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Naizmjenične boje redova */
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Slika recepta u tablici */
+.recipe-image {
+    width: 100% !important;  /* Slika će zauzeti punu širinu kartice */
+    height: auto !important;  /* Zadržava originalne proporcije */
+    border-radius: 10px;  /* Zaobljeni rubovi */
+    display: block;  /* Uklanja bijele prostore oko slike */
+    object-fit: cover;  /* Sprječava razvlačenje slike */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Blaga sjena */
+}
+
+
+/* Gumb "Uredi" */
+td a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 12px;
+    background: white;
+    color: #222222;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+td a:hover {
+    background: #d4af37;
+    color: #222222;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    flex: 1 1 300px; /* Širina se prilagođava */
+    margin: 10px;
+    background-color: lightblue;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Menja raspored elemenata na manjim ekranima */
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

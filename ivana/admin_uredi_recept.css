@@ -1,0 +1,329 @@
+/* Uklanjanje margina i paddinga sa cijele stranice */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden; /* Sprječava horizontalni scroll */
+    font-family: 'Poppins', sans-serif;
+    background-color: #222222;
+    color: #fff;
+}
+
+/* Stiliziranje glavnog sadržaja */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Osigurava punu širinu */
+    padding: 20px;
+}
+
+/* Centriranje i povećanje glavnog naslova */
+h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #d4af37;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Kontejner za formu */
+.form-container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizirani naslovi sekcija */
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d4af37;
+    margin-top: 15px;
+    display: block;
+}
+
+/* Uklanja podcrtavanje naslova */
+label {
+    text-decoration: none;
+}
+
+/* STILIZIRANI FILE INPUT */
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file-upload label {
+    background-color: black;
+    color: #d4af37;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload label:hover {
+    background-color: #d4af37;
+    color: black;
+}
+
+/* Sakrivanje originalnog file inputa */
+.file-upload input[type="file"] {
+    display: none;
+}
+
+/* Prikaz naziva odabrane datoteke */
+.file-name {
+    font-size: 16px;
+    color: black;
+}
+
+/* Stilizacija input polja i textarea */
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Povećanje textarea polja */
+textarea {
+    height: 250px;
+    resize: vertical;
+}
+
+/* Stiliziranje checkboxa */
+.checkbox-group {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+/* Gumb "Spremi promjene" */
+button {
+    width: 100%;
+    background: white;
+    color: #222222;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #d4af37;
+    color: black;
+}
+
+/* Zaglavlje */
+header {
+    background-color: #222222;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    width: 100vw; /* Osigurava punu širinu */
+}
+
+/* Kontejner zaglavlja */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Linkovi u zaglavlju */
+.auth-links a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #222222;
+    color: #d4af37;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.auth-links a:hover {
+    background: #d4af37;
+    color: #222222;
+}
+
+/* Stilizacija slike recepta */
+.recipe-image {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer stil */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 3px solid #d4af37;
+    width: 100vw; /* Osigurava punu širinu */
+}
+
+/* Tekst u footeru */
+.footer-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-form {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .search-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-form input {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .recipe-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card {
+        max-width: 100%;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+
+    .search-form button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .recipe-info h3 {
+        font-size: 18px;
+    }
+
+    .recipe-info a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form-section button {
+        padding: 10px;
+    }
+}

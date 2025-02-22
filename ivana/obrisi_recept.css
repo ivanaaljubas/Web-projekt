@@ -1,0 +1,246 @@
+/* Reset margina i paddinga da ukloni bijeli rub */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Globalni stilovi */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding-bottom: 60px; /* Visina footera */
+}
+
+/* Header */
+header {
+    background-color: #222222;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Header container */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Glavni sadržaj */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* Tablica */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+th {
+    background-color: #121212;
+    color: #c9a227;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td {
+    background-color: white;
+    font-size: 14px;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Gumb "Obriši" */
+.delete-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #d9534f;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: black;
+    color: #d9534f;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #d4af37;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/* Gumb za povratak na admin panel */
+.admin-back-btn {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #d4af37; /* Zlatna slova */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.admin-back-btn:hover {
+    background-color: #d4af37; /* Zlatna pozadina */
+    color: black; /* Crna slova */
+}
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-form {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .search-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-form input {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .recipe-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card {
+        max-width: 100%;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+
+    .search-form button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .recipe-info h3 {
+        font-size: 18px;
+    }
+
+    .recipe-info a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form-section button {
+        padding: 10px;
+    }
+}
